@@ -1,0 +1,6 @@
+module libcuda [system] {
+  header "shim.h"
+  link "cuda"
+  link "cudart"
+  export *
+}
