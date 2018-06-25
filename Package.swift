@@ -3,12 +3,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "libcuda",
-    pkgConfig: "cuda-9.0",
-    providers: [
-        .apt(["cuda-dev"])
-    ],
-    products: [ .library(name: "libcuda", targets: ["libcuda"]) ],
-    dependencies: [
-    ]
+  name: "Clibcuda",
+  pkgConfig: "cuda-9.0",
+  providers: [
+    .apt(["cuda-dev"])
+  ],
+  products: [ 
+    .library(name: "Clibcuda", targets: ["Clibcuda"]) 
+  ],
+  dependencies: []
 )

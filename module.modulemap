@@ -1,4 +1,4 @@
-module libcuda [system] {
+module Clibcuda [system] {
   header "shim.h"
   link "cuda"
   link "cudart"
