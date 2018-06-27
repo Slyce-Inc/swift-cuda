@@ -4,9 +4,9 @@ import PackageDescription
 
 let package = Package(
   name: "Clibcuda",
-  pkgConfig: "cuda-9.0",
+  pkgConfig: "cuda-cudart-dev-9-0",
   providers: [
-    .apt(["cuda-dev"])
+    .apt(["cuda-cudart-dev"])
   ],
   products: [ 
     .library(name: "Clibcuda", targets: ["Clibcuda"]) 
