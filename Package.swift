@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 
 import PackageDescription
 
@@ -18,10 +18,22 @@ let versionToUse = "cudart"
 #endif
 
 let package = Package(
-  name: "Clibcuda",
+  name: "CUDA",
   pkgConfig: versionToUse,
   products: [ 
+    .library(name: "CUDA", targets: ["CUDA"]),
     .library(name: "Clibcuda", targets: ["Clibcuda"]) 
   ],
-  dependencies: []
+  dependencies: [],
+  targets: [
+    .target(
+      name: "CUDA",
+      dependencies: [ "Clibcuda" ]),
+    .systemLibrary(
+      name: "Clibcuda", 
+      pkgConfig: versionToUse, 
+      providers: [
+        .apt([versionToUse])
+      ]), 
+  ]
 )
