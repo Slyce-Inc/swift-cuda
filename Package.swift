@@ -19,7 +19,6 @@ let versionToUse = "cudart"
 
 let package = Package(
   name: "CUDA",
-  pkgConfig: versionToUse,
   products: [ 
     .library(name: "CUDA", targets: ["CUDA"]),
     .library(name: "Clibcuda", targets: ["Clibcuda"]) 
