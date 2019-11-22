@@ -21,15 +21,15 @@ let package = Package(
   name: "CUDA",
   products: [ 
     .library(name: "CUDA", targets: ["CUDA"]),
-    .library(name: "Clibcuda", targets: ["Clibcuda"]) 
+    .library(name: "Clibcudart", targets: ["Clibcudart"]) 
   ],
   dependencies: [],
   targets: [
     .target(
       name: "CUDA",
-      dependencies: [ "Clibcuda" ]),
+      dependencies: [ "Clibcudart" ]),
     .systemLibrary(
-      name: "Clibcuda", 
+      name: "Clibcudart", 
       pkgConfig: versionToUse, 
       providers: [
         .apt([versionToUse])
