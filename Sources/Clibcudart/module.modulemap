@@ -1,5 +1,6 @@
 module Clibcudart [system] {
   header "shim.h"
   link "cudart"
+  link "cuda"
   export *
 }

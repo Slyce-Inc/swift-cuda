@@ -18,10 +18,10 @@ let versionToUse = "cudart"
 #endif
 
 let package = Package(
-  name: "CUDA",
-  products: [ 
+  name: "swift-cuda",
+  products: [
     .library(name: "CUDA", targets: ["CUDA"]),
-    .library(name: "Clibcudart", targets: ["Clibcudart"]) 
+    .library(name: "Clibcudart", targets: ["Clibcudart"])
   ],
   dependencies: [],
   targets: [
@@ -29,10 +29,10 @@ let package = Package(
       name: "CUDA",
       dependencies: [ "Clibcudart" ]),
     .systemLibrary(
-      name: "Clibcudart", 
-      pkgConfig: versionToUse, 
+      name: "Clibcudart",
+      pkgConfig: versionToUse,
       providers: [
         .apt([versionToUse])
-      ]), 
+      ]),
   ]
 )
